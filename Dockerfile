@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine
+FROM adoptopenjdk/openjdk14
 EXPOSE 5000
 ARG JAR_FILE=target/davaro.jar
 ADD ${JAR_FILE} app.jar
