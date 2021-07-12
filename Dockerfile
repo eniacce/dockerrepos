@@ -1,5 +1,4 @@
 FROM amd64/openjdk
 EXPOSE 5000
-ARG JAR_FILE=target/davaro.jar
-ADD ${JAR_FILE} app.jar
+ADD target/davaro.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
