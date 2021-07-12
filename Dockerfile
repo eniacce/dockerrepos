@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk14
+FROM amd64/openjdk
 EXPOSE 5000
 ARG JAR_FILE=target/davaro.jar
 ADD ${JAR_FILE} app.jar
