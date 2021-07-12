@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+spec:
+  selector:
+    matchLabels:
+      run: postgres
+      app: postgres
+
+  template:
+    metadata:
+      name: postgres
+      labels:
+        app: postgres
+        run: postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgres-pv-claim
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_PASSWORD
+              value: "724365"
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_DB
+              value: postgres
+            - name: PGDATA
+              valueFrom:
+                configMapKeyRef:
+                  key: path
+                  name: pgconfig

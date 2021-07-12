@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: databaseconf
+data:
+  username: postgres
+  databasename: postgres
+  postgresqlhost: postgres
+  postgresqlport: 5432
+  serverport: 5000

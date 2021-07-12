@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot
+  labels:
+    run: springboot
+    app: springboot
+spec:
+  selector:
+    matchLabels:
+      app: springboot
+      run: springboot
+  template:
+    metadata:
+      labels:
+        run: springboot
+        app: springboot
+    spec:
+      containers:
+        - name: springpods
+          image: mesutaygn/wintest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: postgresqlhost
+              value:
