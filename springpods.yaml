@@ -22,5 +22,11 @@ spec:
           ports:
             - containerPort: 5000
           env:
-            - name: postgresqlhost
-              value:
+            - name: postgresqlport
+              value: "5432"
+            - name: databasename
+              value: postgres
+            - name: username
+              value: postgres
+            - name: serverport
+              value: "5000"
